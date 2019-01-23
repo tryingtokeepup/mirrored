@@ -107,6 +107,8 @@ module.exports = app => {
 			} catch (e) {
 				throw new AuthenticationError(`${e}`);
 			}
+			console.log('existingUser >>> ', currentUser);
+
 			return { user: currentUser };
 		}
 	});
