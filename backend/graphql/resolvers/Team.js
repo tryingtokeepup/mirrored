@@ -108,7 +108,7 @@ const teamResolvers = {
 				if (team) {
 					if (team.users.length < 5 || team.premium) {
 						return User.find(criteria).then(users => {
-							if (users) {
+							if (users.length) {
 								const filteredUsers = users.filter(
 									user =>
 										!team.users.find(
