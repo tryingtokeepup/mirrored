@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
-import { StyledLink, TextIMG, RespNav } from './styles/index';
-import { Spin } from 'react-burgers';
+import {
+	StyledLink,
+	TextIMG,
+	RespNav,
+	MenuBtn,
+	CloseBtn
+} from './styles/index';
+// import { Spin } from 'react-burgers';
 import textLogo from '../assets/Sveza_white.svg';
 
 export default class AppNavBar extends Component {
@@ -29,7 +35,7 @@ export default class AppNavBar extends Component {
 					<Navbar expand="md">
 						<TextIMG className="text-img" src={textLogo} />
 						<NavbarToggler onClick={this.toggle}>
-							<Spin active={this.state.isOpen} color="#fff" />
+							{this.state.isOpen ? <CloseBtn /> : <MenuBtn />}
 						</NavbarToggler>
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>

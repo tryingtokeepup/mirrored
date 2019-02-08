@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import mediaQueryFor from '../../_global_styles/responsive_querie';
+import Menu from '@material-ui/icons/Menu';
+import Close from '@material-ui/icons/Close';
 
 const StyledLink = styled(Link)`
 	@import url('https://fonts.googleapis.com/css?family=Comfortaa|Righteous');
@@ -169,5 +171,15 @@ const RespNav = styled.div`
 	}
 `;
 
+const MenuBtn = styled(Menu)`
+	color: #fff;
+	font-size: 3rem;
+`;
+
+const CloseBtn = styled(Close)`
+	color: #fff;
+	font-size: 3rem;
+`;
+
 export default NavBar;
-export { TextIMG, StyledLink, RespNav };
+export { TextIMG, StyledLink, RespNav, MenuBtn, CloseBtn };
