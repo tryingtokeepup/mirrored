@@ -12,7 +12,7 @@ const schema = makeExecutableSchema({
 	typeDefs,
 	resolvers
 });
-
+// testing my push/pull request and branch auth. sorry for the frivolous pull request.
 const context = async ({ req }) => {
 	let currentUser;
 	const token = req.headers.authorization;
@@ -25,8 +25,8 @@ const context = async ({ req }) => {
 			cb(null, signingKey);
 		});
 	const options = {
-		aud: 'http://team-home.herokuapp.com/',
-		iss: `${AUTH0_DOMAIN}/api/v2/`,
+		aud: `http://team-home-2-graphql-mongodb.herokuapp.com`,
+		iss: `${AUTH0_DOMAIN}`,
 		algorithms: ['RS256']
 	};
 	try {
@@ -54,7 +54,11 @@ const context = async ({ req }) => {
 
 const server = new ApolloServer({
 	schema,
-	context
+	context: {},
+	debug: true,
+	tracing: true,
+	introspection: true,
+	playground: true
 });
 
 module.exports = app => server.applyMiddleware({ app });
